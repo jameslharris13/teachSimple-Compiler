@@ -1,0 +1,36 @@
+enterProgram(v) ::= "var <v> = function <v>() {"
+
+exitProgram(v) ::= <<
+}
+<v>();>>
+
+globals(values) ::= <<var <values; separator=", "> ;>>
+output(v) ::= <<putstr(<v; separator="+">) ;>>
+emptyOutput() ::= <<putstr() ;>>
+input (v) ::= <<<v> = readline() ;>>
+emptyInput() ::= <<readline() ;>>
+procCall(v, values) ::= <<<v>(<values; separator=", ">) ;>> 
+
+enterIfStatement(v) ::= "if( <v> ) {"
+exitIfStatement() ::= "}"
+
+enterForLoop(variable, from, to, symbol) ::= <<for (<variable>) = <from>; <variable> <symbol> <to>; <variable>++) {>>
+exitForLoop() ::= "}"
+
+enterForLoopDown(variable, from, to, symbol) ::= <<for (<variable> = <from>; <variable> <symbol> <to>; <variable>--) {>>
+exitForLoopDown() ::= "}"
+
+enterWhileLoop(variable, symbol, w) ::= "while (<variable> <symbol> <w>) {"
+exitWhileLoop() ::= "}"
+
+variableDeclaration(variables) ::= <<var <variables; separator=", "> ;>>
+variableAssignmentDec(variable, values) ::= <<var <variable> = <values>;>> 
+assignmentStatement(v, w) ::= "<v> = <w> ;"
+constantDeclaration(identifier, value) ::= "const <identifier> = <value>" 
+
+enterFunctionDeclaration(identifier, v) ::= <<function <identifier> (<v; separator=", ">) {>>
+exitFuncDeclaration() ::= <<"}">>
+
+
+
+comment(v) ::= "//<v>"

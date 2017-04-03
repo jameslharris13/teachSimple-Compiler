@@ -1,0 +1,6 @@
+PROGRAM sample1
+
+BEGIN
+	Write ('Welcome to teachSimple')
+	read
+END
