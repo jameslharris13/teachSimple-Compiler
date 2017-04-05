@@ -1,4 +1,4 @@
-// Generated from .\teachSimple.g4 by ANTLR 4.6
+// Generated from teachSimple.g4 by ANTLR 4.6
 package teachSimple;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -52,18 +52,6 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExitStatement(teachSimpleParser.ExitStatementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExitStatement(teachSimpleParser.ExitStatementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterBlock(teachSimpleParser.BlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -95,6 +83,42 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitLabel(teachSimpleParser.LabelContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterConstantDefinitionPart(teachSimpleParser.ConstantDefinitionPartContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConstantDefinitionPart(teachSimpleParser.ConstantDefinitionPartContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterConstantDefinition(teachSimpleParser.ConstantDefinitionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConstantDefinition(teachSimpleParser.ConstantDefinitionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterConstantChr(teachSimpleParser.ConstantChrContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConstantChr(teachSimpleParser.ConstantChrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -136,6 +160,30 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSign(teachSimpleParser.SignContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSign(teachSimpleParser.SignContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterString(teachSimpleParser.StringContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitString(teachSimpleParser.StringContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterTypeDefinitionPart(teachSimpleParser.TypeDefinitionPartContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -172,30 +220,6 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunctionDeclaration(teachSimpleParser.FunctionDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFunctionDeclaration(teachSimpleParser.FunctionDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterResultType(teachSimpleParser.ResultTypeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitResultType(teachSimpleParser.ResultTypeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterType(teachSimpleParser.TypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -203,6 +227,30 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitType(teachSimpleParser.TypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSimpleType(teachSimpleParser.SimpleTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSimpleType(teachSimpleParser.SimpleTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTypeIdentifier(teachSimpleParser.TypeIdentifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTypeIdentifier(teachSimpleParser.TypeIdentifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -227,66 +275,6 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitUnpackedStructuredType(teachSimpleParser.UnpackedStructuredTypeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSimpleType(teachSimpleParser.SimpleTypeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSimpleType(teachSimpleParser.SimpleTypeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterFormalParameterList(teachSimpleParser.FormalParameterListContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFormalParameterList(teachSimpleParser.FormalParameterListContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterFormalParameterSection(teachSimpleParser.FormalParameterSectionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFormalParameterSection(teachSimpleParser.FormalParameterSectionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterParameterGroup(teachSimpleParser.ParameterGroupContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitParameterGroup(teachSimpleParser.ParameterGroupContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterTypeIdentifier(teachSimpleParser.TypeIdentifierContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTypeIdentifier(teachSimpleParser.TypeIdentifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -352,42 +340,6 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIdentifierList(teachSimpleParser.IdentifierListContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitIdentifierList(teachSimpleParser.IdentifierListContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterString(teachSimpleParser.StringContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitString(teachSimpleParser.StringContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSign(teachSimpleParser.SignContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSign(teachSimpleParser.SignContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterVariableDeclarationPart(teachSimpleParser.VariableDeclarationPartContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -412,85 +364,61 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStructuredStatement(teachSimpleParser.StructuredStatementContext ctx) { }
+	@Override public void enterFunctionDeclaration(teachSimpleParser.FunctionDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStructuredStatement(teachSimpleParser.StructuredStatementContext ctx) { }
+	@Override public void exitFunctionDeclaration(teachSimpleParser.FunctionDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCompoundStatement(teachSimpleParser.CompoundStatementContext ctx) { }
+	@Override public void enterFormalParameterList(teachSimpleParser.FormalParameterListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCompoundStatement(teachSimpleParser.CompoundStatementContext ctx) { }
+	@Override public void exitFormalParameterList(teachSimpleParser.FormalParameterListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatements(teachSimpleParser.StatementsContext ctx) { }
+	@Override public void enterFormalParameterSection(teachSimpleParser.FormalParameterSectionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatements(teachSimpleParser.StatementsContext ctx) { }
+	@Override public void exitFormalParameterSection(teachSimpleParser.FormalParameterSectionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConditionalStatement(teachSimpleParser.ConditionalStatementContext ctx) { }
+	@Override public void enterParameterGroup(teachSimpleParser.ParameterGroupContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConditionalStatement(teachSimpleParser.ConditionalStatementContext ctx) { }
+	@Override public void exitParameterGroup(teachSimpleParser.ParameterGroupContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIfStatement(teachSimpleParser.IfStatementContext ctx) { }
+	@Override public void enterIdentifierList(teachSimpleParser.IdentifierListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIfStatement(teachSimpleParser.IfStatementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSwitchStatement(teachSimpleParser.SwitchStatementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSwitchStatement(teachSimpleParser.SwitchStatementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterCaseListElement(teachSimpleParser.CaseListElementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCaseListElement(teachSimpleParser.CaseListElementContext ctx) { }
+	@Override public void exitIdentifierList(teachSimpleParser.IdentifierListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -503,6 +431,18 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitConstList(teachSimpleParser.ConstListContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterResultType(teachSimpleParser.ResultTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitResultType(teachSimpleParser.ResultTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -527,6 +467,18 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitUnlabelledStatement(teachSimpleParser.UnlabelledStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExitStatement(teachSimpleParser.ExitStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExitStatement(teachSimpleParser.ExitStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -664,18 +616,6 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterActualParameter(teachSimpleParser.ActualParameterContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitActualParameter(teachSimpleParser.ActualParameterContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterSet(teachSimpleParser.SetContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -707,6 +647,126 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitElement(teachSimpleParser.ElementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterActualParameter(teachSimpleParser.ActualParameterContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitActualParameter(teachSimpleParser.ActualParameterContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEmptyStatement(teachSimpleParser.EmptyStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEmptyStatement(teachSimpleParser.EmptyStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterEmpty(teachSimpleParser.EmptyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEmpty(teachSimpleParser.EmptyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStructuredStatement(teachSimpleParser.StructuredStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStructuredStatement(teachSimpleParser.StructuredStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCompoundStatement(teachSimpleParser.CompoundStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCompoundStatement(teachSimpleParser.CompoundStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStatements(teachSimpleParser.StatementsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStatements(teachSimpleParser.StatementsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterConditionalStatement(teachSimpleParser.ConditionalStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConditionalStatement(teachSimpleParser.ConditionalStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIfStatement(teachSimpleParser.IfStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIfStatement(teachSimpleParser.IfStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSwitchStatement(teachSimpleParser.SwitchStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSwitchStatement(teachSimpleParser.SwitchStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCaseListElement(teachSimpleParser.CaseListElementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCaseListElement(teachSimpleParser.CaseListElementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -1,15 +1,11 @@
 PROGRAM sample2
-
-FUNCTION DrawLine (X Integer, Y interger) Integer
-
-VAR Num1, Num2, Sum Integer
-
+VAR Num1,Num2,Sum:Integer
 BEGIN
-	Write ('Input number 1:')
-	Read(Num1)
-    Write('Input number 2:')
-    Read(Num2)
-    Sum = Num1 + Num2 
-    Write(Sum)
-    Read
+	Write('Input number 1:');
+	Read(Num1);
+    Write('Input number 2:');
+    Read(Num2);
+    Sum = Num1 + Num2;
+    Write(Sum);
+    Read;
 END

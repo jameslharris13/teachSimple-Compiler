@@ -21,6 +21,12 @@ class teachSimpleListenerImpl extends teachSimpleBaseListener {
         st.add("v", programName);
         System.out.println(st.render());
     }
+	
+	@Override
+	public void exitProgram(teachSimpleParser.ProgramContext ctx) {
+		ST st = stg.getInstanceOf("exitProgram");
+        System.out.println(st.render());
+	}
 
     @Override
     public void enterFunctionDeclaration(teachSimpleParser.FunctionDeclarationContext ctx) {
@@ -85,6 +91,20 @@ class teachSimpleListenerImpl extends teachSimpleBaseListener {
             System.out.println(st.render());
         }
     }
+	@Override
+	public void enterAssignmentStatement(teachSimpleParser.AssignmentStatementContext ctx){
+		ST st = stg.getInstanceOf("assignmentStatement");
+		String answer = ctx.getChild(0).getText();
+		st.add("v", answer);
+		String answer2= ctx.getChild(2).getText();
+		st.add("w", answer2);
+		System.out.println(st.render());
+	}
+	
+	
+	
+	
+	
 
     @Override
     public void enterForStatement(teachSimpleParser.ForStatementContext ctx) {

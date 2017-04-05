@@ -1,6 +1,5 @@
-PROGRAM sample1
-
+PROGRAM Lesson_PROGRAM
 BEGIN
-	Write ('Welcome to teachSimple')
-	read
+	Write('Welcome to teachSimple');
+	Read;
 END

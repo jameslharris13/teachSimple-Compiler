@@ -1,4 +1,4 @@
-// Generated from .\teachSimple.g4 by ANTLR 4.6
+// Generated from teachSimple.g4 by ANTLR 4.6
 package teachSimple;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -38,16 +38,6 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 */
 	void exitIdentifier(teachSimpleParser.IdentifierContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#exitStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterExitStatement(teachSimpleParser.ExitStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#exitStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitExitStatement(teachSimpleParser.ExitStatementContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#block}.
 	 * @param ctx the parse tree
 	 */
@@ -77,6 +67,36 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitLabel(teachSimpleParser.LabelContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#constantDefinitionPart}.
+	 * @param ctx the parse tree
+	 */
+	void enterConstantDefinitionPart(teachSimpleParser.ConstantDefinitionPartContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#constantDefinitionPart}.
+	 * @param ctx the parse tree
+	 */
+	void exitConstantDefinitionPart(teachSimpleParser.ConstantDefinitionPartContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#constantDefinition}.
+	 * @param ctx the parse tree
+	 */
+	void enterConstantDefinition(teachSimpleParser.ConstantDefinitionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#constantDefinition}.
+	 * @param ctx the parse tree
+	 */
+	void exitConstantDefinition(teachSimpleParser.ConstantDefinitionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#constantChr}.
+	 * @param ctx the parse tree
+	 */
+	void enterConstantChr(teachSimpleParser.ConstantChrContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#constantChr}.
+	 * @param ctx the parse tree
+	 */
+	void exitConstantChr(teachSimpleParser.ConstantChrContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#constant}.
 	 * @param ctx the parse tree
@@ -108,6 +128,26 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 */
 	void exitUnsignedInteger(teachSimpleParser.UnsignedIntegerContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#sign}.
+	 * @param ctx the parse tree
+	 */
+	void enterSign(teachSimpleParser.SignContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#sign}.
+	 * @param ctx the parse tree
+	 */
+	void exitSign(teachSimpleParser.SignContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void enterString(teachSimpleParser.StringContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#string}.
+	 * @param ctx the parse tree
+	 */
+	void exitString(teachSimpleParser.StringContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#typeDefinitionPart}.
 	 * @param ctx the parse tree
 	 */
@@ -138,26 +178,6 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 */
 	void exitFunctionType(teachSimpleParser.FunctionTypeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#functionDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void enterFunctionDeclaration(teachSimpleParser.FunctionDeclarationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#functionDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void exitFunctionDeclaration(teachSimpleParser.FunctionDeclarationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#resultType}.
-	 * @param ctx the parse tree
-	 */
-	void enterResultType(teachSimpleParser.ResultTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#resultType}.
-	 * @param ctx the parse tree
-	 */
-	void exitResultType(teachSimpleParser.ResultTypeContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#type}.
 	 * @param ctx the parse tree
 	 */
@@ -167,6 +187,26 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitType(teachSimpleParser.TypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#simpleType}.
+	 * @param ctx the parse tree
+	 */
+	void enterSimpleType(teachSimpleParser.SimpleTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#simpleType}.
+	 * @param ctx the parse tree
+	 */
+	void exitSimpleType(teachSimpleParser.SimpleTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#typeIdentifier}.
+	 * @param ctx the parse tree
+	 */
+	void enterTypeIdentifier(teachSimpleParser.TypeIdentifierContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#typeIdentifier}.
+	 * @param ctx the parse tree
+	 */
+	void exitTypeIdentifier(teachSimpleParser.TypeIdentifierContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#structuredType}.
 	 * @param ctx the parse tree
@@ -187,56 +227,6 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitUnpackedStructuredType(teachSimpleParser.UnpackedStructuredTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#simpleType}.
-	 * @param ctx the parse tree
-	 */
-	void enterSimpleType(teachSimpleParser.SimpleTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#simpleType}.
-	 * @param ctx the parse tree
-	 */
-	void exitSimpleType(teachSimpleParser.SimpleTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#formalParameterList}.
-	 * @param ctx the parse tree
-	 */
-	void enterFormalParameterList(teachSimpleParser.FormalParameterListContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#formalParameterList}.
-	 * @param ctx the parse tree
-	 */
-	void exitFormalParameterList(teachSimpleParser.FormalParameterListContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#formalParameterSection}.
-	 * @param ctx the parse tree
-	 */
-	void enterFormalParameterSection(teachSimpleParser.FormalParameterSectionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#formalParameterSection}.
-	 * @param ctx the parse tree
-	 */
-	void exitFormalParameterSection(teachSimpleParser.FormalParameterSectionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#parameterGroup}.
-	 * @param ctx the parse tree
-	 */
-	void enterParameterGroup(teachSimpleParser.ParameterGroupContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#parameterGroup}.
-	 * @param ctx the parse tree
-	 */
-	void exitParameterGroup(teachSimpleParser.ParameterGroupContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#typeIdentifier}.
-	 * @param ctx the parse tree
-	 */
-	void enterTypeIdentifier(teachSimpleParser.TypeIdentifierContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#typeIdentifier}.
-	 * @param ctx the parse tree
-	 */
-	void exitTypeIdentifier(teachSimpleParser.TypeIdentifierContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#stringtype}.
 	 * @param ctx the parse tree
@@ -288,36 +278,6 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 */
 	void exitComponentType(teachSimpleParser.ComponentTypeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#identifierList}.
-	 * @param ctx the parse tree
-	 */
-	void enterIdentifierList(teachSimpleParser.IdentifierListContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#identifierList}.
-	 * @param ctx the parse tree
-	 */
-	void exitIdentifierList(teachSimpleParser.IdentifierListContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#string}.
-	 * @param ctx the parse tree
-	 */
-	void enterString(teachSimpleParser.StringContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#string}.
-	 * @param ctx the parse tree
-	 */
-	void exitString(teachSimpleParser.StringContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#sign}.
-	 * @param ctx the parse tree
-	 */
-	void enterSign(teachSimpleParser.SignContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#sign}.
-	 * @param ctx the parse tree
-	 */
-	void exitSign(teachSimpleParser.SignContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#variableDeclarationPart}.
 	 * @param ctx the parse tree
 	 */
@@ -338,75 +298,55 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 */
 	void exitVariableDeclaration(teachSimpleParser.VariableDeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#structuredStatement}.
+	 * Enter a parse tree produced by {@link teachSimpleParser#functionDeclaration}.
 	 * @param ctx the parse tree
 	 */
-	void enterStructuredStatement(teachSimpleParser.StructuredStatementContext ctx);
+	void enterFunctionDeclaration(teachSimpleParser.FunctionDeclarationContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#structuredStatement}.
+	 * Exit a parse tree produced by {@link teachSimpleParser#functionDeclaration}.
 	 * @param ctx the parse tree
 	 */
-	void exitStructuredStatement(teachSimpleParser.StructuredStatementContext ctx);
+	void exitFunctionDeclaration(teachSimpleParser.FunctionDeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#compoundStatement}.
+	 * Enter a parse tree produced by {@link teachSimpleParser#formalParameterList}.
 	 * @param ctx the parse tree
 	 */
-	void enterCompoundStatement(teachSimpleParser.CompoundStatementContext ctx);
+	void enterFormalParameterList(teachSimpleParser.FormalParameterListContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#compoundStatement}.
+	 * Exit a parse tree produced by {@link teachSimpleParser#formalParameterList}.
 	 * @param ctx the parse tree
 	 */
-	void exitCompoundStatement(teachSimpleParser.CompoundStatementContext ctx);
+	void exitFormalParameterList(teachSimpleParser.FormalParameterListContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#statements}.
+	 * Enter a parse tree produced by {@link teachSimpleParser#formalParameterSection}.
 	 * @param ctx the parse tree
 	 */
-	void enterStatements(teachSimpleParser.StatementsContext ctx);
+	void enterFormalParameterSection(teachSimpleParser.FormalParameterSectionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#statements}.
+	 * Exit a parse tree produced by {@link teachSimpleParser#formalParameterSection}.
 	 * @param ctx the parse tree
 	 */
-	void exitStatements(teachSimpleParser.StatementsContext ctx);
+	void exitFormalParameterSection(teachSimpleParser.FormalParameterSectionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#conditionalStatement}.
+	 * Enter a parse tree produced by {@link teachSimpleParser#parameterGroup}.
 	 * @param ctx the parse tree
 	 */
-	void enterConditionalStatement(teachSimpleParser.ConditionalStatementContext ctx);
+	void enterParameterGroup(teachSimpleParser.ParameterGroupContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#conditionalStatement}.
+	 * Exit a parse tree produced by {@link teachSimpleParser#parameterGroup}.
 	 * @param ctx the parse tree
 	 */
-	void exitConditionalStatement(teachSimpleParser.ConditionalStatementContext ctx);
+	void exitParameterGroup(teachSimpleParser.ParameterGroupContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#ifStatement}.
+	 * Enter a parse tree produced by {@link teachSimpleParser#identifierList}.
 	 * @param ctx the parse tree
 	 */
-	void enterIfStatement(teachSimpleParser.IfStatementContext ctx);
+	void enterIdentifierList(teachSimpleParser.IdentifierListContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#ifStatement}.
+	 * Exit a parse tree produced by {@link teachSimpleParser#identifierList}.
 	 * @param ctx the parse tree
 	 */
-	void exitIfStatement(teachSimpleParser.IfStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#switchStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterSwitchStatement(teachSimpleParser.SwitchStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#switchStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitSwitchStatement(teachSimpleParser.SwitchStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#caseListElement}.
-	 * @param ctx the parse tree
-	 */
-	void enterCaseListElement(teachSimpleParser.CaseListElementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#caseListElement}.
-	 * @param ctx the parse tree
-	 */
-	void exitCaseListElement(teachSimpleParser.CaseListElementContext ctx);
+	void exitIdentifierList(teachSimpleParser.IdentifierListContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#constList}.
 	 * @param ctx the parse tree
@@ -417,6 +357,16 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitConstList(teachSimpleParser.ConstListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#resultType}.
+	 * @param ctx the parse tree
+	 */
+	void enterResultType(teachSimpleParser.ResultTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#resultType}.
+	 * @param ctx the parse tree
+	 */
+	void exitResultType(teachSimpleParser.ResultTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#statement}.
 	 * @param ctx the parse tree
@@ -437,6 +387,16 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitUnlabelledStatement(teachSimpleParser.UnlabelledStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#exitStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterExitStatement(teachSimpleParser.ExitStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#exitStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitExitStatement(teachSimpleParser.ExitStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#simpleStatement}.
 	 * @param ctx the parse tree
@@ -548,16 +508,6 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 */
 	void exitParameterList(teachSimpleParser.ParameterListContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link teachSimpleParser#actualParameter}.
-	 * @param ctx the parse tree
-	 */
-	void enterActualParameter(teachSimpleParser.ActualParameterContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link teachSimpleParser#actualParameter}.
-	 * @param ctx the parse tree
-	 */
-	void exitActualParameter(teachSimpleParser.ActualParameterContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#set}.
 	 * @param ctx the parse tree
 	 */
@@ -587,6 +537,106 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitElement(teachSimpleParser.ElementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#actualParameter}.
+	 * @param ctx the parse tree
+	 */
+	void enterActualParameter(teachSimpleParser.ActualParameterContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#actualParameter}.
+	 * @param ctx the parse tree
+	 */
+	void exitActualParameter(teachSimpleParser.ActualParameterContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#emptyStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterEmptyStatement(teachSimpleParser.EmptyStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#emptyStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitEmptyStatement(teachSimpleParser.EmptyStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#empty}.
+	 * @param ctx the parse tree
+	 */
+	void enterEmpty(teachSimpleParser.EmptyContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#empty}.
+	 * @param ctx the parse tree
+	 */
+	void exitEmpty(teachSimpleParser.EmptyContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#structuredStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterStructuredStatement(teachSimpleParser.StructuredStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#structuredStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitStructuredStatement(teachSimpleParser.StructuredStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#compoundStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterCompoundStatement(teachSimpleParser.CompoundStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#compoundStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitCompoundStatement(teachSimpleParser.CompoundStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#statements}.
+	 * @param ctx the parse tree
+	 */
+	void enterStatements(teachSimpleParser.StatementsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#statements}.
+	 * @param ctx the parse tree
+	 */
+	void exitStatements(teachSimpleParser.StatementsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#conditionalStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterConditionalStatement(teachSimpleParser.ConditionalStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#conditionalStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitConditionalStatement(teachSimpleParser.ConditionalStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#ifStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIfStatement(teachSimpleParser.IfStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#ifStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIfStatement(teachSimpleParser.IfStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#switchStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterSwitchStatement(teachSimpleParser.SwitchStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#switchStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitSwitchStatement(teachSimpleParser.SwitchStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#caseListElement}.
+	 * @param ctx the parse tree
+	 */
+	void enterCaseListElement(teachSimpleParser.CaseListElementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#caseListElement}.
+	 * @param ctx the parse tree
+	 */
+	void exitCaseListElement(teachSimpleParser.CaseListElementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#repetetiveStatement}.
 	 * @param ctx the parse tree

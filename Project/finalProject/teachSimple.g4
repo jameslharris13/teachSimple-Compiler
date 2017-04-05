@@ -2,177 +2,103 @@ grammar teachSimple;
 
 program
     : programName
-      block
+     block
     ;
 	
-	
-	
 programName
-    : 'PROGRAM' identifier (LPAREN identifierList RPAREN)?
-    | 'UNIT' identifier
+    : 'PROGRAM' identifier (LPAREN identifierList RPAREN)? 
+    | 'UNIT' identifier 
 	; 
-
-	
-	
 	
 identifier
     : IDENT
     ;
 
-	
-	
-	
-exitStatement
-    : 'EXIT'
-    ;
-
-	
-	
 block
-   : ( labelDeclarationPart
+	: (labelDeclarationPart
     | typeDefinitionPart
     | variableDeclarationPart
     | functionDeclaration
+	| 'IMPLEMENTATION'
     )*
     compoundStatement
-    ;
-	
-	
-	
-	
-labelDeclarationPart
-    : 'LABEL' label ( COMMA label )*
-    ;
+	;
 
-	
-	
+labelDeclarationPart
+    : 'LABEL' label ( COMMA label )* 
+    ;
 	
 label
     : Integer
     ;
 
-	
-	
-	
+constantDefinitionPart
+    : 'CONST' constantDefinition ( SEMI constantDefinition )* 
+    ;
+
+constantDefinition
+    : identifier EQUAL constant
+    ;
+
+constantChr
+    : 'CHR' LPAREN (unsignedInteger|identifier) RPAREN
+    ;
+
 constant
     : unsignedNumber
     | sign unsignedNumber
     | identifier
     | sign identifier
     | string
+    | constantChr
     ;
-	
-	
-	
-	
-	
+
 unsignedNumber
     : unsignedInteger
 	;
-
-	
-	
 	
 unsignedInteger
 	: NUM_INT
 	;
-	
-	
-	
-	
+
 Integer
     : NUM_INT
     ;
 	
+sign
+    : PLUS | MINUS
+    ;
 	
-	
+string
+    : STRING
+    ;
+
 	
 typeDefinitionPart
-   : 'TYPE' typeDefinition ( SEMI typeDefinition )* SEMI
+   : 'TYPE' typeDefinition ( SEMI typeDefinition )* 
    ;
 
-   
-   
-   
 typeDefinition
    : identifier EQUAL
     ( type
     | functionType
     )
     ;
-
-	
-	
 	
 functionType
-    : 'FUNCTION' (formalParameterList)? COMMA resultType
+    : 'FUNCTION' (formalParameterList)? COLON resultType
     ;
 
-	
-	
-	
-functionDeclaration
-    : 'FUNCTION' identifier (formalParameterList)? WHITESPACE resultType 
-      ( block )
-    ;
-
-resultType
-    : typeIdentifier
-    ;
-	
-	
 type
     : simpleType
     | structuredType
     ;
-	
-	
-	
-structuredType
-    : 'PACKED' unpackedStructuredType
-   | unpackedStructuredType
-    ;
 
-	
-	
-unpackedStructuredType
-    : arrayType
-    ;
-	
-	
-	
-	
 simpleType
     : typeIdentifier
     | stringtype
     ;
-	
-	
-	
-	
-formalParameterList
-    : LPAREN formalParameterSection ( COMMA formalParameterSection )* RPAREN
-    ;
-	
-	
-	
-	
-formalParameterSection
-    : parameterGroup
-    | 'VAR' parameterGroup
-    | 'FUNCTION' parameterGroup
-    ;
-	
-	
-	
-	
-	
-parameterGroup
-    : identifierList typeIdentifier
-    ;
-	
-	
-	
+
 typeIdentifier
     : identifier
     | 'CHAR'
@@ -180,16 +106,19 @@ typeIdentifier
     | 'INTEGER'
     | 'STRING'
     ;
+
+structuredType
+    : 'PACKED' unpackedStructuredType
+	| unpackedStructuredType
+    ;
 	
-	
-	
-	
+unpackedStructuredType
+    : arrayType
+    ;
+
 stringtype
     : 'STRING' LPAREN (identifier|unsignedNumber) RPAREN
     ;
-
-	
-	
 	
 arrayType
     : 'ARRAY' LBRACK typeList RBRACK 'OF' componentType
@@ -198,11 +127,7 @@ arrayType
 typeList
   : indexType ( COMMA indexType )*
   ;
-
-  
-  
-  
-  
+ 
 indexType
     : simpleType
     ;
@@ -210,40 +135,145 @@ indexType
 componentType
     : type
     ;
-  
-  
-  
-  
-  
-identifierList
-    : identifier ( COMMA identifier )*
-    ;
-
-	
-	
-	
-string
-    : STRING
-    ;
-	
-sign
-    : PLUS | MINUS
-    ;
-	
-	
-	
-	
+		
 variableDeclarationPart
     : 'VAR'  variableDeclaration ( COMMA variableDeclaration )* 
     ;
 	
 variableDeclaration
-    : identifierList WHITESPACE type
+    : identifierList COLON type
+    ;
+		
+functionDeclaration
+    : 'FUNCTION' identifier (formalParameterList)? COLON resultType 
+      ( block )
+    ;
+
+formalParameterList
+    : LPAREN formalParameterSection ( COMMA formalParameterSection )* RPAREN
     ;
 	
+formalParameterSection
+    : parameterGroup
+    | 'VAR' parameterGroup
+    | 'FUNCTION' parameterGroup
+    ;
 	
+parameterGroup
+    : identifierList typeIdentifier
+    ;
+
+identifierList
+    : identifier ( COMMA identifier )*
+    ;
 	
+constList
+	: constant ( COMMA constant) *
+	;
 	
+resultType
+    : typeIdentifier
+    ;
+	
+statement
+    : label WHITESPACE unlabelledStatement
+    | unlabelledStatement
+    ;
+
+unlabelledStatement
+    : simpleStatement
+    | structuredStatement
+    ;
+
+exitStatement
+    : 'EXIT'
+    ;
+	
+simpleStatement
+    : assignmentStatement
+    | exitStatement
+	| emptyStatement
+    | write
+    | read
+    ;
+
+assignmentStatement
+    : variable ASSIGN expression
+    ;
+	
+variable
+    : (identifier
+      )
+      ( LBRACK expression ( COMMA expression)* RBRACK
+      | DOT identifier
+      )*
+    ;
+
+expression
+    : simpleExpression
+    ( (EQUAL | NOT_EQUAL | LT | LE | GE | GT | 'IN') simpleExpression )*
+    ;
+
+simpleExpression
+    : term ( (PLUS | MINUS | 'OR') term )*
+    ;
+
+term
+  : signedFactor ( (STAR | SLASH | 'DIV' | 'MOD' | 'AND') signedFactor )*
+    ;
+
+signedFactor
+    : (PLUS|MINUS)? factor
+    ;
+
+factor
+    : variable
+    | LPAREN expression RPAREN
+    | functionDesignator
+    | unsignedConstant
+    | set
+    | 'NOT' factor
+    ;
+	
+unsignedConstant
+	: unsignedNumber
+	| constantChr
+	| string
+	| 'NIL'
+	;
+
+functionDesignator
+    : identifier LPAREN parameterList RPAREN
+    ;
+	
+parameterList
+    : actualParameter ( COMMA actualParameter )*
+    ;
+	
+set
+    : LBRACK elementList RBRACK
+    ;
+	
+elementList
+    : element ( COMMA element )*
+	|
+    ;
+	
+element
+    : expression ( DOTDOT expression )?
+    ;
+
+actualParameter
+    : expression (COMMA unsignedInteger)?
+    ;
+
+emptyStatement
+	:
+	;
+
+empty
+	: // Nothing 
+	;
 	
 structuredStatement
     : compoundStatement
@@ -257,10 +287,8 @@ compoundStatement
       'END'
     ;
 
-	
-	
 statements
-    : statement ( SEMI statement )*
+    : statement (SEMI statement )*
     ;
 
 conditionalStatement
@@ -268,151 +296,29 @@ conditionalStatement
     | switchStatement
     ;
 
-	
-	
-	
 ifStatement
     : 'IF' expression 'THEN' statement
       (
      'ELSE' statement
     )?
     ;
-
+	
 switchStatement
-    : 'CASE' expression
-        caseListElement (caseListElement )*?
+    : 'CASE' expression 'OF'
+        caseListElement (caseListElement )* ?
       ( 'ELSE' statements )?
       'END'
     ;
-
-	
-	
 	
 caseListElement
     : constList statement
     ;
 
-constList
-    : constant ( COMMA constant )*
-    ;
-	
-statement
-    : label WHITESPACE unlabelledStatement
-    | unlabelledStatement
-    ;
-	
-	
-	
-	
-unlabelledStatement
-    : simpleStatement
-    | structuredStatement
-    ;
-
-simpleStatement
-    : assignmentStatement
-    | exitStatement
-    | write
-    | read
-    ;
-
-	
-	
-	
-assignmentStatement
-    : variable ASSIGN expression
-    ;
-	
-variable
-    : (identifier
-      )
-      ( LBRACK expression ( COMMA expression)* RBRACK
-      | DOT identifier
-      )*
-    ;
-
-	
-	
-	
-expression
-    : simpleExpression
-    ( (EQUAL | NOT_EQUAL | LT | LE | GE | GT | 'IN') simpleExpression )*
-    ;
-
-simpleExpression
-    : term ( (PLUS | MINUS | 'OR') term )*
-    ;
-
-	
-	
-	
-term
-  : signedFactor ( (STAR | SLASH | 'DIV' | 'MOD' | 'AND') signedFactor )*
-    ;
-
-signedFactor
-    : (PLUS|MINUS)? factor
-    ;
-
-	
-	
-factor
-    : variable
-    | LPAREN expression RPAREN
-    | functionDesignator
-    | unsignedConstant
-    | set
-    | 'NOT' factor
-    ;
-
-unsignedConstant
-    : unsignedNumber
-    | string
-    | 'NIL'
-    ;
-
-	
-	
-	
-functionDesignator
-    : identifier LPAREN parameterList RPAREN
-    ;
-	
-parameterList
-    : actualParameter ( COMMA actualParameter )*
-    ;
-	
-actualParameter
-    : expression (COMMA unsignedInteger)?
-    ;
-	
-set
-    : LBRACK elementList RBRACK
-    ;
-
-	
-	
-	
-elementList
-    : element ( COMMA element )*
-    |
-    ;
-
-element
-    : expression ( DOTDOT expression )?
-    ;
-
-	
-	
-	
 repetetiveStatement
     : whileStatement
     | repeatStatement
     | forStatement
     ;
-
-	
-	
 	
 whileStatement
     : 'WHILE' expression 'DO' statement
@@ -422,8 +328,6 @@ repeatStatement
     : 'REPEAT' identifier  LBRACK  statements RBRACK
     ;
 
-	
-	
 forStatement
     : 'FOR' identifier ASSIGN forList 'DO' statement
     ;
@@ -432,10 +336,6 @@ forList
     : initialValue ('TO' | 'DOWNTO') finalValue
     ;
 
-	
-	
-	
-	
 initialValue
     : expression
     ;
@@ -445,14 +345,12 @@ finalValue
     ;
 	
 read
-    : ('Read'| 'read') LPAREN? (string|variable|expression)? RPAREN?
+    : ('Read'| 'read') LPAREN? (string|variable|expression|STRING|constant)? RPAREN?
     ;
 
 write 
-    : ('Write'|'Write'|'write') LPAREN  (string|expression|STRING|constant)  RPAREN
-    ;
-
-	
+    : ('Write'|'write') LPAREN  (string|expression|STRING|constant)  RPAREN
+    ;	
 	
 IDENT  
 	:  ('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* 
@@ -532,7 +430,7 @@ RBRACK
 : ']'  
 ;
 WHITESPACE 		
-: ' '  
+: [ \t\r\n]+ -> skip
 ;
 
 DOT             

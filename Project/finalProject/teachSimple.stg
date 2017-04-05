@@ -1,14 +1,14 @@
 enterProgram(v) ::= "var <v> = function <v>() {"
-
-exitProgram(v) ::= <<
-}
-<v>();>>
+exitProgram() ::= <<}>>
 
 globals(values) ::= <<var <values; separator=", "> ;>>
-output(v) ::= <<putstr(<v; separator="+">) ;>>
-emptyOutput() ::= <<putstr() ;>>
-input (v) ::= <<<v> = readline() ;>>
-emptyInput() ::= <<readline() ;>>
+
+output(v) ::= <<console.log(<v; separator="+">);>>
+emptyOutput() ::= <<console.log();>>
+
+input (v) ::= <<readln(<v>);>>
+emptyInput() ::= <<readln();>>
+
 procCall(v, values) ::= <<<v>(<values; separator=", ">) ;>> 
 
 enterIfStatement(v) ::= "if( <v> ) {"
@@ -23,9 +23,10 @@ exitForLoopDown() ::= "}"
 enterWhileLoop(variable, symbol, w) ::= "while (<variable> <symbol> <w>) {"
 exitWhileLoop() ::= "}"
 
-variableDeclaration(variables) ::= <<var <variables; separator=", "> ;>>
+variableDeclaration(variables) ::= <<var <variables; separator=", ">;>>
 variableAssignmentDec(variable, values) ::= <<var <variable> = <values>;>> 
-assignmentStatement(v, w) ::= "<v> = <w> ;"
+
+assignmentStatement(v, w) ::= "<v> = <w>;"
 constantDeclaration(identifier, value) ::= "const <identifier> = <value>" 
 
 enterFunctionDeclaration(identifier, v) ::= <<function <identifier> (<v; separator=", ">) {>>
