@@ -1,0 +1,6 @@
+PROGRAM Sample7
+BEGIN
+	LOOP 7
+	write('hello');
+	//Comment test
+END

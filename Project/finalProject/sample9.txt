@@ -1,0 +1,6 @@
+PROGRAM sample9
+CONST
+    room = 'A35D':String
+BEGIN
+	write('Constant declaration')
+END

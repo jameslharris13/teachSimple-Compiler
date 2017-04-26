@@ -2,14 +2,15 @@ grammar teachSimple;
 
 program
     : programName
-     block
+      block
+	|functionDeclaration
     ;
 	
 programName
     : 'PROGRAM' identifier (LPAREN identifierList RPAREN)? 
     | 'UNIT' identifier 
 	; 
-	
+
 identifier
     : IDENT
     ;
@@ -18,6 +19,7 @@ block
 	: (labelDeclarationPart
     | typeDefinitionPart
     | variableDeclarationPart
+	| constantDefinitionPart
     | functionDeclaration
 	| 'IMPLEMENTATION'
     )*
@@ -37,7 +39,7 @@ constantDefinitionPart
     ;
 
 constantDefinition
-    : identifier EQUAL constant
+    : identifier ASSIGN constant COLON type
     ;
 
 constantChr
@@ -45,7 +47,7 @@ constantChr
     ;
 
 constant
-    : unsignedNumber
+    : Integer
     | sign unsignedNumber
     | identifier
     | sign identifier
@@ -64,6 +66,10 @@ unsignedInteger
 Integer
     : NUM_INT
     ;
+
+Double
+	: NUM_DOUBLE
+	;
 	
 sign
     : PLUS | MINUS
@@ -75,11 +81,11 @@ string
 
 	
 typeDefinitionPart
-   : 'TYPE' typeDefinition ( SEMI typeDefinition )* 
+   : 'TYPE' typeDefinition
    ;
 
 typeDefinition
-   : identifier EQUAL
+   : identifier ASSIGN
     ( type
     | functionType
     )
@@ -104,6 +110,7 @@ typeIdentifier
     | 'CHAR'
     | 'BOOLEAN'
     | 'INTEGER'
+	| 'DOUBLE'
     | 'STRING'
     ;
 
@@ -121,7 +128,7 @@ stringtype
     ;
 	
 arrayType
-    : 'ARRAY' LBRACK typeList RBRACK 'OF' componentType
+    : 'ARRAY' LBRACK label RBRACK 'OF' componentType
 	;
 	
 typeList
@@ -145,8 +152,8 @@ variableDeclaration
     ;
 		
 functionDeclaration
-    : 'FUNCTION' identifier (formalParameterList)? COLON resultType 
-      ( block )
+    : 'FUNCTION'? identifier (formalParameterList)? COLON? resultType?
+      ( block )?
     ;
 
 formalParameterList
@@ -191,8 +198,11 @@ exitStatement
 	
 simpleStatement
     : assignmentStatement
+	| functionStatement
     | exitStatement
 	| emptyStatement
+	| commentStatement
+	| incrementStatement
     | write
     | read
     ;
@@ -211,16 +221,16 @@ variable
 
 expression
     : simpleExpression
-    ( (EQUAL | NOT_EQUAL | LT | LE | GE | GT | 'IN') simpleExpression )*
+    ( (EQUAL | NOT_EQUAL | NUM_INT | NUM_DOUBLE| LT | LE | GE | GT | 'IN')? simpleExpression )*
     ;
 
 simpleExpression
-    : term ( (PLUS | MINUS | 'OR') term )*
+    : term ( (PLUS | MINUS | 'OR')? term )*
     ;
 
 term
-  : signedFactor ( (STAR | SLASH | 'DIV' | 'MOD' | 'AND') signedFactor )*
-    ;
+  : signedFactor ((STAR | SLASH | ASSIGN | 'DIV' | 'MOD' | 'AND' | LE | GT)? signedFactor )*
+  ;
 
 signedFactor
     : (PLUS|MINUS)? factor
@@ -232,6 +242,8 @@ factor
     | functionDesignator
     | unsignedConstant
     | set
+	| Integer
+	| Double
     | 'NOT' factor
     ;
 	
@@ -263,6 +275,10 @@ element
     : expression ( DOTDOT expression )?
     ;
 
+functionStatement
+	: identifier ( LPAREN parameterList RPAREN )?
+	;
+	
 actualParameter
     : expression (COMMA unsignedInteger)?
     ;
@@ -304,19 +320,20 @@ ifStatement
     ;
 	
 switchStatement
-    : 'CASE' expression 'OF'
-        caseListElement (caseListElement )* ?
+    : 'SWITCH' expression 'ON'
+      ('CASE' label COLON caseListElement)+?
       ( 'ELSE' statements )?
       'END'
     ;
 	
 caseListElement
-    : constList statement
+    : constList? statement
     ;
 
 repetetiveStatement
     : whileStatement
     | repeatStatement
+	| loopRepeatStatement
     | forStatement
     ;
 	
@@ -325,9 +342,13 @@ whileStatement
     ;
 
 repeatStatement
-    : 'REPEAT' identifier  LBRACK  statements RBRACK
+    : 'REPEAT' statements 'UNTIL' expression
     ;
 
+loopRepeatStatement
+	:  'LOOP' Integer statements
+	;
+	
 forStatement
     : 'FOR' identifier ASSIGN forList 'DO' statement
     ;
@@ -337,31 +358,41 @@ forList
     ;
 
 initialValue
-    : expression
+	: Integer
     ;
 
 finalValue
-    : expression
+    : Integer
     ;
 	
 read
     : ('Read'| 'read') LPAREN? (string|variable|expression|STRING|constant)? RPAREN?
     ;
-
 write 
     : ('Write'|'write') LPAREN  (string|expression|STRING|constant)  RPAREN
     ;	
+	
+commentStatement
+	: COMMENT (string|variable|expression|STRING|constant|label| WHITESPACE)*
+	;
+
+incrementStatement
+    : (string|variable|expression|STRING|constant|label|WHITESPACE)* PLUS PLUS
+	;
 	
 IDENT  
 	:  ('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')* 
 	;
 
 NUM_INT
-  : ('0'..'9')+
+  : ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9')+
   ;
  
+NUM_DOUBLE
+	: ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9')+ DOT ('0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9')+
+	;
 COMMENT
-   :   SLASH STAR .*? STAR SLASH
+   :   SLASH SLASH
    ;
 	
 STRING

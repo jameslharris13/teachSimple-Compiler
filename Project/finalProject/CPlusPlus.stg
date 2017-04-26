@@ -1,0 +1,51 @@
+enterProgram(v) ::= "int main() {"
+exitProgram() ::= <<}>>
+
+globals(values) ::= <<var <values; separator=", "> ;>>
+
+output(s, v) ::= <<cout \<\< <v; separator="+">;>>
+emptyOutput() ::= <<cout \<\<" ";>>
+
+input (v) ::= <<cin >\> <v>;>>
+emptyInput() ::= <<cin >\> " ";>>
+
+procCall(v, values) ::= <<<v>(<values; separator=",">) ;>> 
+
+enterIfStatement(v) ::= "if(<v>) {"
+exitIfStatement() ::= "}"
+
+enterSwitchStatement(v) ::= "switch <v> {"
+exitSwitchStatement() ::= "}"
+
+enterForLoop(variable, from, to, symbol) ::= <<for (<variable> = <from>; <variable> <symbol> <to>; <variable>++) {>>
+exitForLoop() ::= "}"
+
+enterForLoopDown(variable, from, to, symbol) ::= <<for (<variable> = <from>; <variable> <symbol> <to>; <variable>--) {>>
+exitForLoopDown() ::= "}"
+
+enterWhileLoop(variable) ::= "while(<variable>) { <\n>"
+exitWhileLoop() ::= "}"
+
+enterRepeatStatement(variable) ::= "while(<variable>){"
+exitRepeatStatement() ::= "}"
+
+enterLoopRepeatStatement(cond, variable) ::= <<for (<cond> <variable>; i++) {>>
+exitLoopRepeatStatement(variable) ::= "}"
+
+variableDeclaration(variables, type) ::= <<<type> <variables; separator=", ">;>>
+variableAssignmentDec(variable, values) ::= <<var <variable> = <values>;>> 
+
+typeDeclaration(name, size, type) ::= <<<type> <name> [<size>];>>
+
+assignmentStatement(v, w) ::= "<v> = <w>;"
+
+enterConstantDeclaration(identifier, value, type) ::= "const <type> <identifier> <value>;" 
+
+enterFunctionDeclaration(identifier, v) ::= <<function <identifier> (<v; separator=",">);>>
+enterFunctionDesignator(identifier, v) ::= <<identifier> (<v; separator=",">);>>
+exitFunctionDesignator() ::= "}"
+enterFunctionStatement(name, parameters) ::= <<<name><parameters>;>>
+
+comment(value) ::= "//<value>"
+
+enterIncrementStatement(r) ::= <<<r>;>>

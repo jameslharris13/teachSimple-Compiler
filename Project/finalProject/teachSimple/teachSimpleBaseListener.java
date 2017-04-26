@@ -652,6 +652,18 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterFunctionStatement(teachSimpleParser.FunctionStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFunctionStatement(teachSimpleParser.FunctionStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterActualParameter(teachSimpleParser.ActualParameterContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -808,6 +820,18 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterLoopRepeatStatement(teachSimpleParser.LoopRepeatStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLoopRepeatStatement(teachSimpleParser.LoopRepeatStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterForStatement(teachSimpleParser.ForStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -875,6 +899,30 @@ public class teachSimpleBaseListener implements teachSimpleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitWrite(teachSimpleParser.WriteContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCommentStatement(teachSimpleParser.CommentStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCommentStatement(teachSimpleParser.CommentStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIncrementStatement(teachSimpleParser.IncrementStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIncrementStatement(teachSimpleParser.IncrementStatementContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

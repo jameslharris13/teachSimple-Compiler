@@ -1,0 +1,8 @@
+PROGRAM sample6
+BEGIN
+IF sel == 1 THEN
+BEGIN
+
+
+END
+END

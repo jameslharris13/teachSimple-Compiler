@@ -1,0 +1,10 @@
+PROGRAM Sample5
+VAR A:Integer
+BEGIN
+A = 5;
+WHILE A < 10 DO 
+BEGIN
+
+write('Hello')
+END
+END

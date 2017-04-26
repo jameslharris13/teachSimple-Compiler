@@ -1,0 +1,5 @@
+PROGRAM sample11
+TYPE Array = ARRAY[15] OF Integer
+BEGIN
+	write('hello');
+END

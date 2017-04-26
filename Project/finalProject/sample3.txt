@@ -1,9 +1,7 @@
 PROGRAM Sample3
-
-VAR Counter Integer
-
+VAR Counter:Integer
 BEGIN
-	FOR Counter = 1 TO 7 DO
-		write('Loop')
+	FOR Counter = 1 TO 7 DO 
+		write('Loop');
 	Read
 END

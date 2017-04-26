@@ -1,0 +1,11 @@
+PROGRAM sample8
+VAR grade:string 
+BEGIN
+grade = 'A';
+	SWITCH (grade) ON
+		CASE 0: write('Excellent!')
+		CASE 1: write('Well done')
+		CASE 2: write('You passed')
+		CASE 3: write('You failed')
+	END
+END

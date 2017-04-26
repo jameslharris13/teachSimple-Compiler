@@ -1,0 +1,50 @@
+enterProgram(v) ::= "def main():"
+exitProgram() ::= <<>>
+
+globals(values) ::= <<var <values; separator=", "> ;>>
+
+output(v) ::= <<print(<v; separator="+">)>>
+emptyOutput() ::= <<print()>>
+
+input (v) ::= <<input = raw_input(<v>)>>
+emptyInput() ::= <<input = raw_input()>>
+
+procCall(v, values) ::= <<<v>(<values; separator=",">) ;>> 
+
+enterIfStatement(v) ::= "if <v>:"
+exitIfStatement() ::= ""
+
+enterSwitchStatement(v) ::= "switch <v> {"
+exitSwitchStatement() ::= "}"
+
+enterForLoop(variable, from, to, symbol) ::= <<for <variable> in range (0,<to>):>>
+exitForLoop() ::= ""
+
+enterForLoopDown(variable, from, to, symbol) ::= <<for <variable> in range (<to>, 0):>>
+exitForLoopDown() ::= ""
+
+enterWhileLoop(variable) ::= "while(<variable>): <\n>"
+exitWhileLoop() ::= ""
+
+enterRepeatStatement(variable) ::= "while(<variable>): "
+exitRepeatStatement() ::= ""
+
+enterLoopRepeatStatement(cond, variable) ::= <<for i in range (0, <variable>):>>
+exitLoopRepeatStatement(variable) ::= ""
+
+variableDeclaration(variables) ::= <<<variables; separator=", "> = None>>
+variableAssignmentDec(variable, values) ::= <<var <variable> = <values>;>> 
+
+typeDeclaration(name, size) ::= <<var <name> = new Array (<size>);>>
+assignmentStatement(v, w) ::= "<v> = <w>"
+
+enterConstantDeclaration(identifier, value, type) ::= "<type> <identifier> <value>;" 
+
+enterFunctionDeclaration(identifier, v) ::= <<def <identifier> (<v; separator=",">):>>
+enterFunctionDesignator(identifier, v) ::= <<identifier> (<v; separator=",">)>>
+exitFunctionDesignator() ::= "}"
+enterFunctionStatement(name, parameters) ::= <<<name> <parameters> >>
+
+comment(value) ::= "#<value>"
+
+enterIncrementStatement(r) ::= <<>>

@@ -19,9 +19,8 @@ class Main {
             inputFile = args[0];
         }
         InputStream is = System.in;
-        inputFile = "C:\\Users\\James\\Desktop\\Project\\finalProject\\sample2.txt";
+        inputFile = "C:\\Users\\James\\Desktop\\Project\\finalProject\\sample7.txt";
         if (inputFile != null) {
-            //System.out.println("// source file is " + inputFile);
             is = new FileInputStream(inputFile);
 
             ANTLRInputStream input = new ANTLRInputStream(is);

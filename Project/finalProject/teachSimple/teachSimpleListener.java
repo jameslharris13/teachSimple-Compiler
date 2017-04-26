@@ -538,6 +538,16 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 */
 	void exitElement(teachSimpleParser.ElementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#functionStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunctionStatement(teachSimpleParser.FunctionStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#functionStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunctionStatement(teachSimpleParser.FunctionStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#actualParameter}.
 	 * @param ctx the parse tree
 	 */
@@ -668,6 +678,16 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 */
 	void exitRepeatStatement(teachSimpleParser.RepeatStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#loopRepeatStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterLoopRepeatStatement(teachSimpleParser.LoopRepeatStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#loopRepeatStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitLoopRepeatStatement(teachSimpleParser.LoopRepeatStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link teachSimpleParser#forStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -727,4 +747,24 @@ public interface teachSimpleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitWrite(teachSimpleParser.WriteContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#commentStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterCommentStatement(teachSimpleParser.CommentStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#commentStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitCommentStatement(teachSimpleParser.CommentStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link teachSimpleParser#incrementStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIncrementStatement(teachSimpleParser.IncrementStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link teachSimpleParser#incrementStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIncrementStatement(teachSimpleParser.IncrementStatementContext ctx);
 }

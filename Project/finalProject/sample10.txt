@@ -1,0 +1,12 @@
+PROGRAM sample10
+FUNCTION DrawLine(X Integer, Y Integer):Integer
+BEGIN
+	write('Function Declaraton');
+	DrawLine(a, b);
+	//Comment test
+END
+
+FUNCTION DrawLine(X Integer, Y Integer)
+BEGIN 
+	write('Function Declaraton')
+END

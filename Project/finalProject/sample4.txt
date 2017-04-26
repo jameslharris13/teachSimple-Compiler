@@ -1,7 +1,9 @@
 PROGRAM Sample4
-
-VAR Iterations Integer
 BEGIN
-	Iterations = 4
-	REPEAT Iterations [write ('Repeat statement')]
+	REPEAT
+	BEGIN
+		YN = 'hello';
+		a++
+	END
+	UNTIL a < 3
 END

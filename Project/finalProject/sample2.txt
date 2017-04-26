@@ -5,7 +5,7 @@ BEGIN
 	Read(Num1);
     Write('Input number 2:');
     Read(Num2);
-    Sum = Num1 + Num2;
+    Sum = Num1 / Num2;
     Write(Sum);
     Read;
 END
